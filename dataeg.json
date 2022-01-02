@@ -1,0 +1,51 @@
+{
+    "type": "FeatureCollection",
+    "metadata": {
+        "generated": 1640894580000,
+        "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson",
+        "title": "USGS All Earthquakes, Past Week",
+        "status": 200,
+        "api": "1.10.3",
+        "count": 1409
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 2.5,
+                "place": "9km WNW of The Geysers, CA",
+                "time": 1640894134870,
+                "updated": 1640894232176,
+                "tz": null,
+                "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc73669291",
+                "detail": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc73669291.geojson",
+                "felt": null,
+                "cdi": null,
+                "mmi": null,
+                "alert": null,
+                "status": "automatic",
+                "tsunami": 0,
+                "sig": 96,
+                "net": "nc",
+                "code": "73669291",
+                "ids": ",nc73669291,",
+                "sources": ",nc,",
+                "types": ",nearby-cities,origin,phase-data,",
+                "nst": 20,
+                "dmin": 0.04399,
+                "rms": 0.14,
+                "gap": 75,
+                "magType": "md",
+                "type": "earthquake",
+                "title": "M 2.5 - 9km WNW of The Geysers, CA"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -122.8506699,
+                    38.8160019,
+                    3.38
+                ]
+            },
+            "id": "nc73669291"
+        },
