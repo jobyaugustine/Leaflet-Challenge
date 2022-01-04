@@ -114,6 +114,6 @@ function createMarkers(response) {
   createMap(L.layerGroup(eqMarkers));
 }
 
-//Perform an API call to the Earthquake API to get the station information. Call createMarkers when it completes.
+//Perform an API call to the Earthquake API to get the earthquake places information. Call createMarkers when it completes.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson")
 .then(createMarkers);
