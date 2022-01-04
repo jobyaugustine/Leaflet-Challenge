@@ -11,7 +11,7 @@ function createMap(eqPlaces) {
     "Street Map": streetmap
   };
 
-  // Create an overlayMaps object to hold the bikeStations layer.
+  // Create an overlayMaps object to hold the Earthquake places layer.
   var overlayMaps = {
     "Earthquake Places": eqPlaces
   };
@@ -26,7 +26,7 @@ function createMap(eqPlaces) {
 
   // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
   L.control.layers(baseMaps, overlayMaps, {
-collapsed: false }).addTo(myMap);
+      collapsed: false }).addTo(myMap);
     
     
   var legend = L.control({position: 'bottomright'});
@@ -55,10 +55,10 @@ collapsed: false }).addTo(myMap);
 function createMarkers(response) {
   
   var features = response.features;
-  // Initialize an array to hold bike markers.
+  // Initialize an array to hold earthquake markers.
   var eqMarkers = [];
 
-  // Loop through the stations array.
+  // Loop through the earthquakeplaces array.
   for (var index = 0; index < features.length; index++) {
     var feature = features[index];
 
@@ -87,6 +87,7 @@ function createMarkers(response) {
   
   function drawPerMagnitude(mag) 
     {return mag * 100;}
+
     // function for displaying the marker in diff colors depending on the depth
   function getColorbyDepth(depth) {
     
@@ -105,21 +106,14 @@ function createMarkers(response) {
 
     return color;
   }                
-  //   // // Add the marker to the bikeMarkers array.
+  //   // // Add the marker to the earthquakemarker array.
     eqMarkers.push(eqMarker);
-
-    
-
-  }
-
-  
-
-  // Create a layer group that's made from the bike markers array, and pass it to the createMap function.
-  createMap(L.layerGroup(eqMarkers));
-
-
 }
 
-//Perform an API call to the Citi Bike API to get the station information. Call createMarkers when it completes.
+  // Create a layer group that's made from the earthquake markers array, and pass it to the createMap function.
+  createMap(L.layerGroup(eqMarkers));
+}
+
+//Perform an API call to the Earthquake API to get the station information. Call createMarkers when it completes.
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson")
 .then(createMarkers);
